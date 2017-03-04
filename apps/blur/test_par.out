@@ -1,0 +1,341 @@
+Man 1, size = 1
+
+runtime: 289.238
+runtime: 289.169
+runtime: 309.156
+runtime: 295.868
+runtime: 288.941
+runtime: 292.757
+runtime: 290.836
+runtime: 4.9371
+runtime: 4.92928
+runtime: 5.54458
+runtime: 5.55142
+Man 2, size = 1
+
+runtime: 3.66436
+runtime: 3.66958
+runtime: 3.66724
+runtime: 3.65972
+Man 1, size = 2
+
+runtime: 20.2646
+runtime: 20.2639
+runtime: 20.2773
+runtime: 20.2777
+Man 2, size = 2
+
+runtime: 14.438
+runtime: 14.5766
+runtime: 15.9209
+runtime: 15.8748
+Man 1, size = 4
+
+runtime: 80.0883
+runtime: 80.0404
+runtime: 79.7081
+runtime: 81.2557
+Man 1, size = 1
+
+runtime: 79.8142
+runtime: 79.7417
+runtime: 83.6428
+runtime: 88.038
+runtime: 5.61942
+runtime: 5.62268
+runtime: 5.62166
+runtime: 5.63484
+Man 2, size = 1
+
+runtime: 3.6004
+runtime: 3.59666
+runtime: 3.91786
+runtime: 3.96962
+Man 1, size = 2
+
+runtime: 19.984
+runtime: 20.2318
+runtime: 20.1676
+runtime: 20.1761
+Man 2, size = 2
+
+runtime: 14.6731
+runtime: 14.6876
+runtime: 14.7165
+runtime: 14.7173
+Man 1, size = 4
+
+runtime: 79.8725
+runtime: 79.6956
+runtime: 84.3752
+runtime: 88.1571
+Man 2, size = 4
+
+runtime: 58.8291
+runtime: 58.8643
+runtime: 58.945
+runtime: 58.9457
+Man 1, size = 8
+
+runtime: 320.056
+runtime: 319.879
+runtime: 319.17
+runtime: 333.059
+Man 2, size = 8
+
+runtime: 242.539
+runtime: 242.497
+runtime: 257.635
+runtime: 243.687
+Man 1, size = 16
+
+runtime: 1278.77
+runtime: 1276.31
+runtime: 1295.39
+runtime: 1348.23
+Man 2, size = 16
+
+runtime: 1224.11
+runtime: 1248.06
+runtime: 1241.36
+runtime: 1242.89
+Man 3, size = 1, tile = 4
+
+runtime: 3.18954
+runtime: 3.18194
+runtime: 4.7209
+runtime: 4.67454
+Man 3, size = 2, tile = 4
+
+runtime: 12.4974
+runtime: 12.548
+runtime: 19.3945
+runtime: 19.0749
+Man 3, size = 4, tile = 4
+
+runtime: 51.0665
+runtime: 51.726
+runtime: 51.3089
+runtime: 52.0675
+Man 3, size = 8, tile = 4
+
+runtime: 201.222
+runtime: 199.575
+runtime: 240.138
+runtime: 271.057
+Man 3, size = 16, tile = 4
+
+runtime: 874.913
+runtime: 840.291
+runtime: 907.687
+runtime: 863.977
+Man 3, size = 1, tile = 8
+
+runtime: 3.47742
+runtime: 3.47528
+runtime: 3.5032
+runtime: 3.53738
+Man 3, size = 2, tile = 8
+
+runtime: 14.8333
+runtime: 14.7321
+runtime: 14.9466
+runtime: 15.0123
+Man 3, size = 4, tile = 8
+
+runtime: 59.3792
+runtime: 59.4878
+runtime: 59.3708
+runtime: 59.1478
+Man 3, size = 8, tile = 8
+
+runtime: 237.192
+runtime: 237.617
+runtime: 240.54
+runtime: 243.826
+Man 3, size = 16, tile = 8
+
+runtime: 1013.2
+runtime: 1002.1
+runtime: 986.295
+runtime: 990.649
+Man 3, size = 1, tile = 16
+
+runtime: 3.59718
+runtime: 3.5927
+runtime: 4.43168
+runtime: 4.43122
+Man 3, size = 2, tile = 16
+
+runtime: 14.3641
+runtime: 14.3651
+runtime: 17.4513
+runtime: 17.3632
+Man 3, size = 4, tile = 16
+
+runtime: 57.6359
+runtime: 57.6568
+runtime: 58.8154
+runtime: 59.8789
+Man 3, size = 8, tile = 16
+
+runtime: 243.652
+runtime: 244.722
+runtime: 286.586
+runtime: 289.07
+Man 3, size = 16, tile = 16
+
+runtime: 970.554
+runtime: 967.439
+runtime: 1003.09
+runtime: 981.041
+Man 3, size = 1, tile = 32
+
+runtime: 3.69586
+runtime: 3.71108
+runtime: 3.72576
+runtime: 3.76866
+Man 3, size = 2, tile = 32
+
+runtime: 14.7552
+runtime: 14.8061
+runtime: 14.7953
+runtime: 14.8679
+Man 3, size = 4, tile = 32
+
+runtime: 58.3764
+runtime: 58.2933
+runtime: 58.5092
+runtime: 61.8065
+Man 3, size = 8, tile = 32
+
+runtime: 236.362
+runtime: 236.795
+runtime: 238.306
+runtime: 236.195
+Man 3, size = 16, tile = 32
+
+runtime: 1039.13
+runtime: 1050
+runtime: 1045.68
+runtime: 1050.8
+Man 3, size = 1, tile = 64
+
+runtime: 3.7499
+runtime: 3.74952
+runtime: 3.75832
+runtime: 3.75926
+Man 3, size = 2, tile = 64
+
+runtime: 14.7445
+runtime: 14.8117
+runtime: 16.7175
+runtime: 16.7354
+Man 3, size = 4, tile = 64
+
+runtime: 60.1673
+runtime: 60.2238
+runtime: 60.3194
+runtime: 60.3448
+Man 3, size = 8, tile = 64
+
+runtime: 237.747
+runtime: 240.14
+runtime: 264.153
+runtime: 263.392
+Man 3, size = 16, tile = 64
+
+runtime: 944.361
+runtime: 946.261
+runtime: 938.773
+runtime: 1037.25
+Man 3, size = 1, tile = 128
+
+runtime: 3.67038
+runtime: 3.72522
+runtime: 3.65326
+runtime: 3.63786
+Man 3, size = 2, tile = 128
+
+runtime: 14.721
+runtime: 14.7297
+runtime: 16.399
+runtime: 16.3984
+Man 3, size = 4, tile = 128
+
+runtime: 59.7842
+runtime: 59.7842
+runtime: 59.8715
+runtime: 59.8937
+Man 3, size = 8, tile = 128
+
+runtime: 234.411
+runtime: 235.182
+runtime: 239.249
+runtime: 238.784
+Man 3, size = 16, tile = 128
+
+runtime: 940.821
+runtime: 940.797
+runtime: 989.452
+runtime: 973.516
+Man 3, size = 1, tile = 256
+
+runtime: 3.64152
+runtime: 3.64462
+runtime: 4.0778
+runtime: 4.12586
+Man 3, size = 2, tile = 256
+
+runtime: 14.5479
+runtime: 14.5259
+runtime: 16.3446
+runtime: 16.3801
+Man 3, size = 4, tile = 256
+
+runtime: 58.3727
+runtime: 59.1061
+runtime: 58.6146
+runtime: 58.6045
+Man 3, size = 8, tile = 256
+
+runtime: 241.482
+runtime: 236.113
+runtime: 238.546
+runtime: 256.259
+Man 3, size = 16, tile = 256
+
+runtime: 983.228
+runtime: 987.662
+runtime: 1002.46
+runtime: 1003
+Man 3, size = 1, tile = 512
+
+runtime: 4.86154
+runtime: 4.90778
+runtime: 5.36036
+runtime: 5.392
+Man 3, size = 2, tile = 512
+
+runtime: 15.1057
+runtime: 15.1448
+runtime: 15.1622
+runtime: 15.2451
+Man 3, size = 4, tile = 512
+
+runtime: 59.4859
+runtime: 59.2791
+runtime: 59.8137
+runtime: 59.4773
+Man 3, size = 8, tile = 512
+
+runtime: 238.31
+runtime: 239.395
+runtime: 246.971
+runtime: 247.018
+Man 3, size = 16, tile = 512
+
+runtime: 954.139
+runtime: 951.2
+runtime: 971.606
+runtime: 971.718

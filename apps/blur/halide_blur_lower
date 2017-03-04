@@ -1,0 +1,50 @@
+Target = x86-64-linux-avx-sse41
+1 func __blur_y (input, blur_y) {
+if (blur_y.host_and_dev_are_null) {
+  rewrite_buffer(blur_y.buffer, 2, blur_y.min.0, blur_y.extent.0, 1, blur_y.min.1, blur_y.extent.1, blur_y.extent.0)
+}
+if (input.host_and_dev_are_null) {
+  rewrite_buffer(input.buffer, 2, blur_y.min.0, (blur_y.extent.0 + 2), 1, blur_y.min.1, (blur_y.extent.1 + 2), (blur_y.extent.0 + 2))
+}
+if (!(blur_y.host_and_dev_are_null || input.host_and_dev_are_null)) {
+  assert((blur_y.elem_size == 2), halide_error_bad_elem_size("Output buffer blur_y", "uint16", blur_y.elem_size, 2))
+  assert((input.elem_size == 2), halide_error_bad_elem_size("Input buffer input", "uint16", input.elem_size, 2))
+  assert(((input.min.0 <= blur_y.min.0) && ((((blur_y.min.0 + blur_y.extent.0) - input.extent.0) + 2) <= input.min.0)), halide_error_access_out_of_bounds("Input buffer input", 0, blur_y.min.0, ((blur_y.min.0 + blur_y.extent.0) + 1), input.min.0, ((input.min.0 + input.extent.0) + -1)))
+  assert(((input.min.1 <= blur_y.min.1) && ((((blur_y.min.1 + blur_y.extent.1) - input.extent.1) + 2) <= input.min.1)), halide_error_access_out_of_bounds("Input buffer input", 1, blur_y.min.1, ((blur_y.min.1 + blur_y.extent.1) + 1), input.min.1, ((input.min.1 + input.extent.1) + -1)))
+  assert((blur_y.stride.0 == 1), halide_error_constraint_violated("blur_y.stride.0", blur_y.stride.0, "1", 1))
+  assert((input.stride.0 == 1), halide_error_constraint_violated("input.stride.0", input.stride.0, "1", 1))
+  let blur_y.total_extent.1 = (int64(blur_y.extent.1)*int64(blur_y.extent.0))
+  let input.total_extent.1 = (int64(input.extent.1)*int64(input.extent.0))
+  assert((int64(blur_y.extent.0) <= (int64)2147483647), halide_error_buffer_allocation_too_large("blur_y", int64(blur_y.extent.0), (int64)2147483647))
+  assert(((int64(blur_y.extent.1)*int64(blur_y.stride.1)) <= (int64)2147483647), halide_error_buffer_allocation_too_large("blur_y", (int64(blur_y.extent.1)*int64(blur_y.stride.1)), (int64)2147483647))
+  assert((blur_y.total_extent.1 <= (int64)2147483647), halide_error_buffer_extents_too_large("blur_y", blur_y.total_extent.1, (int64)2147483647))
+  assert((int64(input.extent.0) <= (int64)2147483647), halide_error_buffer_allocation_too_large("input", int64(input.extent.0), (int64)2147483647))
+  assert(((int64(input.extent.1)*int64(input.stride.1)) <= (int64)2147483647), halide_error_buffer_allocation_too_large("input", (int64(input.extent.1)*int64(input.stride.1)), (int64)2147483647))
+  assert((input.total_extent.1 <= (int64)2147483647), halide_error_buffer_extents_too_large("input", input.total_extent.1, (int64)2147483647))
+  allocate blur_x[uint16 * blur_y.extent.0 * (blur_y.extent.1 + 2)]
+  produce blur_x {
+    for (blur_x.s0.y, blur_y.min.1, (blur_y.extent.1 + 2)) {
+      for (blur_x.s0.x, blur_y.min.0, blur_y.extent.0) {
+        blur_x[((blur_x.s0.x - blur_y.min.0) + ((blur_x.s0.y - blur_y.min.1)*blur_y.extent.0))] = (let t0 = ((blur_x.s0.x + (blur_x.s0.y*input.stride.1)) - (input.min.0 + (input.min.1*input.stride.1))) in (((input[t0] + input[(t0 + 1)]) + input[(t0 + 2)])/(uint16)3))
+      }
+    }
+  }
+  produce blur_y {
+    for (blur_y.s0.y, blur_y.min.1, blur_y.extent.1) {
+      for (blur_y.s0.x, blur_y.min.0, blur_y.extent.0) {
+        blur_y[((blur_y.s0.x + (blur_y.s0.y*blur_y.stride.1)) - (blur_y.min.0 + (blur_y.min.1*blur_y.stride.1)))] = (((blur_x[((blur_y.s0.x - blur_y.min.0) + ((blur_y.s0.y - blur_y.min.1)*blur_y.extent.0))] + blur_x[((blur_y.s0.x - blur_y.min.0) + (((blur_y.s0.y - blur_y.min.1) + 1)*blur_y.extent.0))]) + blur_x[((blur_y.s0.x - blur_y.min.0) + (((blur_y.s0.y - blur_y.min.1) + 2)*blur_y.extent.0))])/(uint16)3)
+      }
+    }
+    free blur_x
+  }
+  0
+}
+}
+
+
+0 func blur_y (input, blur_y) {
+let __blur_y_result = __blur_y(input.buffer, blur_y.buffer)
+assert((__blur_y_result == 0), __blur_y_result)
+}
+
+
