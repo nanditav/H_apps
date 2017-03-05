@@ -1,0 +1,156 @@
+#Size = 1, tile = 1 
+runtime: 1330.67
+runtime: 1.11405
+#Size = 1, tile = inf 
+runtime: 2.43595
+#Size = 2, tile = 1 
+runtime: 4.59535
+#Size = 2, tile = inf 
+runtime: 9.88085
+#Size = 4, tile = 1 
+runtime: 19.007
+#Size = 4, tile = inf 
+runtime: 39.5038
+#Size = 8, tile = 1 
+runtime: 77.8036
+#Size = 8, tile = inf 
+runtime: 168.88
+#Size = 16, tile = 1 
+runtime: 319.981
+#Size = 16, tile = inf 
+runtime: 686.221
+#Size = 32, tile = 1 
+runtime: 1330.34
+#Size = 32, tile = inf 
+runtime: 2789.7
+#Size = 1, tile = 4 
+runtime: 3.2334
+#Size = 2, tile = 4 
+runtime: 13.0921
+#Size = 4, tile = 4 
+runtime: 52.4331
+#Size = 8, tile = 4 
+runtime: 209.832
+#Size = 16, tile = 4 
+runtime: 840.018
+#Size = 32, tile = 4 
+runtime: 3361.99
+#Size = 1, tile = 8 
+runtime: 4.48205
+#Size = 2, tile = 8 
+runtime: 18.3024
+#Size = 4, tile = 8 
+runtime: 73.2061
+#Size = 8, tile = 8 
+runtime: 293.032
+#Size = 16, tile = 8 
+runtime: 1192.69
+#Size = 32, tile = 8 
+runtime: 4784.13
+#Size = 1, tile = 16 
+runtime: 1.67135
+#Size = 2, tile = 16 
+runtime: 6.85245
+#Size = 4, tile = 16 
+runtime: 27.2363
+#Size = 8, tile = 16 
+runtime: 132.101
+#Size = 16, tile = 16 
+runtime: 731.379
+#Size = 32, tile = 16 
+runtime: 3908.89
+#Size = 1, tile = 32 
+runtime: 2.5171
+#Size = 2, tile = 32 
+runtime: 10.3499
+#Size = 4, tile = 32 
+runtime: 41.0697
+#Size = 8, tile = 32 
+runtime: 163.729
+#Size = 16, tile = 32 
+runtime: 812.565
+#Size = 32, tile = 32 
+runtime: 4338.83
+#Size = 1, tile = 64 
+runtime: 1.5423
+#Size = 2, tile = 64 
+runtime: 6.76915
+#Size = 4, tile = 64 
+runtime: 26.6479
+#Size = 8, tile = 64 
+runtime: 107.744
+#Size = 16, tile = 64 
+runtime: 436.231
+#Size = 32, tile = 64 
+runtime: 3698.66
+#Size = 1, tile = 128 
+runtime: 2.49445
+#Size = 2, tile = 128 
+runtime: 10.395
+#Size = 4, tile = 128 
+runtime: 40.696
+#Size = 8, tile = 128 
+runtime: 161.487
+#Size = 16, tile = 128 
+runtime: 664.671
+#Size = 32, tile = 128 
+runtime: 3691.83
+#Size = 1, tile = 256 
+runtime: 2.4669
+#Size = 2, tile = 256 
+runtime: 10.0297
+#Size = 4, tile = 256 
+runtime: 40.0558
+#Size = 8, tile = 256 
+runtime: 160.385
+#Size = 16, tile = 256 
+runtime: 681.278
+#Size = 32, tile = 256 
+runtime: 3068.41
+#Size = 1, tile = 512 
+runtime: 2.44925
+#Size = 2, tile = 512 
+runtime: 9.9612
+#Size = 4, tile = 512 
+runtime: 39.652
+#Size = 8, tile = 512 
+runtime: 163.007
+#Size = 16, tile = 512 
+runtime: 657.231
+#Size = 32, tile = 512 
+runtime: 2647.85
+#Size = 1, tile = 1024 
+#Size = 2, tile = 1024 
+runtime: 10.0008
+#Size = 4, tile = 1024 
+runtime: 40.2795
+#Size = 8, tile = 1024 
+runtime: 160.534
+#Size = 16, tile = 1024 
+runtime: 642.961
+#Size = 32, tile = 1024 
+runtime: 2582.61
+#Size = 2, tile = 2048 
+#Size = 4, tile = 2048 
+runtime: 40.4374
+#Size = 8, tile = 2048 
+runtime: 162.3
+#Size = 16, tile = 2048 
+runtime: 647.942
+#Size = 32, tile = 2048 
+runtime: 2588.55
+#Size = 4, tile = 4096 
+#Size = 8, tile = 4096 
+runtime: 169.269
+#Size = 16, tile = 4096 
+runtime: 679.563
+#Size = 32, tile = 4096 
+runtime: 2721.89
+#Size = 8, tile = 8192 
+#Size = 16, tile = 8192 
+runtime: 672.901
+#Size = 32, tile = 8192 
+runtime: 2692.42
+#Size = 16, tile = 16384 
+#Size = 32, tile = 16384 
+runtime: 2709.03
