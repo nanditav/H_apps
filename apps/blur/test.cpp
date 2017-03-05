@@ -5,6 +5,7 @@
 #include "benchmark.h"
 #include "halide_image.h"
 #include "halide_blur.h"
+#include "halide_sin_blur.h"
 
 using namespace Halide::Tools;
 
@@ -177,6 +178,21 @@ Image<uint16_t> blur_fast2(const Image<uint16_t> &in) {
 }
 #endif
 
+Image<float> sin_blur_halide(Image<float> in) {
+    Image<float> out(in.width()-8, in.height()-2);
+
+    // Call it once to initialize the halide runtime stuff
+    halide_sin_blur(in, out);
+
+    t = benchmark(5, 50, [&]() {
+        // Compute the same region of the output as blur_fast (i.e., we're
+        // still being sloppy with boundary conditions)
+        halide_sin_blur(in, out);
+    }, [&] () { out.device_sync();});
+
+    return out;
+}
+
 Image<uint16_t> blur_halide(Image<uint16_t> in) {
     Image<uint16_t> out(in.width()-8, in.height()-2);
 
@@ -202,10 +218,16 @@ int main(int argc, char **argv) {
     }
     //Image<uint16_t> input(6408, 4802);
     Image<uint16_t> input(size1, size2);
+    Image<float> input_float(size1, size2);
 
     for (int y = 0; y < input.height(); y++) {
         for (int x = 0; x < input.width(); x++) {
             input(x, y) = rand() & 0xfff;
+        }
+    }
+    for (int y = 0; y < input.height(); y++) {
+        for (int x = 0; x < input.width(); x++) {
+            input_float(x, y) = rand();
         }
     }
 
@@ -219,8 +241,12 @@ int main(int argc, char **argv) {
     //Image<uint16_t> speedy2 = blur_fast2(input);
     //float fast_time2 = t;
 #endif
+    if(atoi(argv[2]) == 0) 
+        Image<uint16_t> halide = blur_halide(input);
 
-    Image<uint16_t> halide = blur_halide(input);
+    if(atoi(argv[2]) == 1) 
+        Image<float> halide = sin_blur_halide(input_float);
+
     double halide_time = t;
 
     // fast_time2 is always slower than fast_time, so skip printing it

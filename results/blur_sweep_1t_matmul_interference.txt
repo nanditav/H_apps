@@ -118,7 +118,6 @@ runtime: 162.031
 runtime: 659.243
 #Size = 32, tile = 512 
 runtime: 2655.82
-#Size = 1, tile = 1024 
 #Size = 2, tile = 1024 
 runtime: 9.9326
 #Size = 4, tile = 1024 
@@ -129,7 +128,6 @@ runtime: 159.938
 runtime: 644.512
 #Size = 32, tile = 1024 
 runtime: 2587.84
-#Size = 2, tile = 2048 
 #Size = 4, tile = 2048 
 runtime: 40.44
 #Size = 8, tile = 2048 
@@ -138,18 +136,15 @@ runtime: 161.903
 runtime: 649.273
 #Size = 32, tile = 2048 
 runtime: 2595.8
-#Size = 4, tile = 4096 
 #Size = 8, tile = 4096 
 runtime: 169.671
 #Size = 16, tile = 4096 
 runtime: 681.04
 #Size = 32, tile = 4096 
 runtime: 2727.95
-#Size = 8, tile = 8192 
 #Size = 16, tile = 8192 
 runtime: 674.954
 #Size = 32, tile = 8192 
 runtime: 2700.14
-#Size = 16, tile = 16384 
 #Size = 32, tile = 16384 
 runtime: 2716.64
