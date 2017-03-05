@@ -1,0 +1,120 @@
+#Size = 1, tile = 1 
+runtime: 0.83145
+#Size = 1, tile = inf 
+runtime: 1.8239
+#Size = 2, tile = 1 
+runtime: 3.4193
+#Size = 2, tile = inf 
+runtime: 7.383
+#Size = 4, tile = 1 
+runtime: 14.1741
+#Size = 4, tile = inf 
+runtime: 29.8088
+#Size = 8, tile = 1 
+runtime: 58.2696
+#Size = 8, tile = inf 
+runtime: 126.723
+#Size = 16, tile = 1 
+runtime: 239.906
+#Size = 16, tile = inf 
+runtime: 514.452
+#Size = 1, tile = 4 
+runtime: 2.4204
+#Size = 2, tile = 4 
+runtime: 9.8079
+#Size = 4, tile = 4 
+runtime: 39.3004
+#Size = 8, tile = 4 
+runtime: 157.349
+#Size = 16, tile = 4 
+runtime: 630.91
+#Size = 1, tile = 8 
+runtime: 3.359
+#Size = 2, tile = 8 
+runtime: 13.7219
+#Size = 4, tile = 8 
+runtime: 54.8836
+#Size = 8, tile = 8 
+runtime: 219.756
+#Size = 16, tile = 8 
+runtime: 892.358
+#Size = 1, tile = 16 
+runtime: 1.25325
+#Size = 2, tile = 16 
+runtime: 5.1846
+#Size = 4, tile = 16 
+runtime: 20.4267
+#Size = 8, tile = 16 
+runtime: 98.3141
+#Size = 16, tile = 16 
+runtime: 544.116
+#Size = 1, tile = 32 
+runtime: 1.88845
+#Size = 2, tile = 32 
+runtime: 7.64565
+#Size = 4, tile = 32 
+runtime: 30.8485
+#Size = 8, tile = 32 
+runtime: 123.535
+#Size = 16, tile = 32 
+runtime: 610.745
+#Size = 1, tile = 64 
+runtime: 1.15155
+#Size = 2, tile = 64 
+runtime: 4.8716
+#Size = 4, tile = 64 
+runtime: 20.0324
+#Size = 8, tile = 64 
+runtime: 80.9905
+#Size = 16, tile = 64 
+runtime: 326.793
+#Size = 1, tile = 128 
+runtime: 1.87055
+#Size = 2, tile = 128 
+runtime: 7.65405
+#Size = 4, tile = 128 
+runtime: 30.487
+#Size = 8, tile = 128 
+runtime: 121.036
+#Size = 16, tile = 128 
+runtime: 499.271
+#Size = 1, tile = 256 
+runtime: 1.8497
+#Size = 2, tile = 256 
+runtime: 7.4926
+#Size = 4, tile = 256 
+runtime: 30.0343
+#Size = 8, tile = 256 
+runtime: 120.281
+#Size = 16, tile = 256 
+runtime: 506.553
+#Size = 1, tile = 512 
+runtime: 2.4479
+#Size = 2, tile = 512 
+runtime: 7.44155
+#Size = 4, tile = 512 
+runtime: 29.7361
+#Size = 8, tile = 512 
+runtime: 122.187
+#Size = 16, tile = 512 
+runtime: 493.288
+#Size = 2, tile = 1024 
+runtime: 9.85905
+#Size = 4, tile = 1024 
+runtime: 30.2016
+#Size = 8, tile = 1024 
+runtime: 120.406
+#Size = 16, tile = 1024 
+runtime: 482.235
+#Size = 4, tile = 2048 
+runtime: 40.405
+#Size = 8, tile = 2048 
+runtime: 121.17
+#Size = 16, tile = 2048 
+runtime: 485.851
+#Size = 8, tile = 4096 
+runtime: 169.206
+#Size = 16, tile = 4096 
+runtime: 508.91
+#Size = 16, tile = 8192 
+runtime: 672.961
