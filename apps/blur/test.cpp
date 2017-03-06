@@ -35,6 +35,71 @@ Image<uint16_t> blur(Image<uint16_t> in) {
     return out;
 }
 
+Image<uint16_t> blur_manual(Image<uint16_t> in, int tile_size) {
+    Image<uint16_t> tmp(in.width()-2, in.height());
+    Image<uint16_t> out(in.width()-2, in.height()-2);
+    Image<uint16_t> tmp2(tile_size, tile_size+2);
+
+    printf("Manually computing output\n");
+
+    if(tile_size == 0) {
+        printf("Tile size: 0\n");
+        t = benchmark(4, 4, [&]() {
+            for (int y = 0; y < tmp.height(); y++)
+                for (int x = 0; x < tmp.width(); x++)
+                    tmp(x, y) = (in(x, y) + in(x+1, y) + in(x+2, y))/3;
+
+            for (int y = 0; y < out.height(); y++)
+                for (int x = 0; x < out.width(); x++)
+                    out(x, y) = (tmp(x, y) + tmp(x, y+1) + tmp(x, y+2))/3;
+        });
+    }
+    else if(tile_size == 1) {
+        t = benchmark(4, 4, [&]() {
+            for (int y = 0; y < out.height(); y++)
+                for (int x = 0; x < out.width(); x++)
+                    out(x, y) = (in(x, y) + in(x, y+1) + in(x, y+2) + in(x+1,y) + in(x+2,y) + in(x+1,y+1) + in(x+2,y+2) + in(x+2,y+1) + in(x+1,y+2))/9;
+        });
+    }
+    else {
+        t = benchmark(1, 1, [&]() {
+            for(int y = 0; y < out.height(); y+=tile_size){
+                for(int x = 0; x < out.width(); x+=tile_size){
+                    for(int j = 0; j < tile_size + 2; j++){
+                        for(int i = 0; i < tile_size; i++){
+                            tmp2(i,j) = (in(x+i,y+j) + in(x+i+1,y+j) + in(x+i+2,y+j))/3;
+                        }
+                    }
+                    /*printf("Tile: %d %d\n",x,y);
+                    for(int j = 0; j < tile_size+2; j++){
+                        for(int i = 0; i < tile_size; i++){
+                            printf("%d\t",tmp2(i,j));
+                        }
+                        printf("\n");
+                    }*/
+                    for(int j = 0; j < tile_size; j++){
+                        for(int i = 0; i < tile_size; i++){
+                        out(i+x,j+y) = (tmp2(i,j) + tmp2(i,j+1) + tmp2(i,j+2))/3;
+                    }
+                    }
+                }
+            }
+        });
+    }
+    /*printf("Output:\n");
+    for (int y = 0; y < out.height(); y++){
+        for (int x = 0; x < out.width(); x++){
+            printf("%d\t",out(x,y));
+        }
+        printf("\n");
+    }*/
+
+    return out;
+}
+
+
+
+
 #ifdef __arm__
 Image<uint16_t> blur_fast(Image<uint16_t> in) {
     return blur(in);
@@ -210,20 +275,27 @@ Image<uint16_t> blur_halide(Image<uint16_t> in) {
 
 int main(int argc, char **argv) {
 
-    int size1=1024, size2=768;
+    int size1=1024, size2=1024;
 
     if(argc > 1) {
         size1 *= atoi(argv[1]);
         size2 *= atoi(argv[1]);
+        if(atoi(argv[2]) == 3) {
+            size1 += 2;
+            size2 += 2;
+        }
     }
     //Image<uint16_t> input(6408, 4802);
     Image<uint16_t> input(size1, size2);
     Image<float> input_float(size1, size2);
 
+   // printf("Input:\n");
     for (int y = 0; y < input.height(); y++) {
         for (int x = 0; x < input.width(); x++) {
-            input(x, y) = rand() & 0xfff;
+            input(x, y) = rand();
+     //       printf("%d\t",input(x,y));
         }
+       // printf("\n");
     }
     for (int y = 0; y < input.height(); y++) {
         for (int x = 0; x < input.width(); x++) {
@@ -246,6 +318,10 @@ int main(int argc, char **argv) {
 
     if(atoi(argv[2]) == 1) 
         Image<float> halide = sin_blur_halide(input_float);
+
+    if(atoi(argv[2]) == 3) 
+        Image<uint16_t> halide = blur_manual(input, atoi(argv[3]));
+        
 
     double halide_time = t;
 
