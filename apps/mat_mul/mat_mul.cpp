@@ -7,10 +7,13 @@ using namespace Halide;
 #include "benchmark.h"
 
 int main(int argc, char **argv) {
-    int size = 2048;
+    int size_scale = atoi(argv[2]);
+    int size = size_scale * 1024;
     Image<float> A(size, size);
     Image<float> B(size, size);
     Image<float> C(size, size);
+
+    int tile_size = atoi(argv[3]);
 
     for (int y = 0; y < A.height(); y++) {
         for (int x = 0; x < A.width(); x++) {
@@ -101,10 +104,13 @@ int main(int argc, char **argv) {
         } else {
             Var xi, yi, xii, yii;
             // Tile the output domain
+            /*prod.compute_at(out, x).vectorize(x);
+            prod.update().reorder(x, y, r).vectorize(x).unroll(y);
+            out.tile(x, y, xi, yi, 16, 4).vectorize(xi).unroll(yi).parallel(y);*/
             prod.compute_at(out, x).vectorize(x);
             prod.update().reorder(x, y, r).vectorize(x).unroll(y);
-            out.tile(x, y, xi, yi, 16, 4).vectorize(xi).unroll(yi).parallel(y);
-            out.print_loop_nest();
+            out.tile(x, y, xi, yi, tile_size, tile_size).vectorize(xi);
+            //out.print_loop_nest();
         }
     }
 
